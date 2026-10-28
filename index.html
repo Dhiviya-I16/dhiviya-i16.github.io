@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhiviya Irudayanathan – QA Lead | Supply Chain and AI Quality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F4F5;--card:#FFFFFF;--ink:#14213D;--muted:#566170;--rule:#D5DAE0;--accent:#F2C200;--link:#1B4DB1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10161F;--card:#172030;--ink:#E8ECF1;--muted:#9AA5B1;--rule:#2A3441;--link:#8CB4FF}}
+:root[data-theme="dark"]{--bg:#10161F;--card:#172030;--ink:#E8ECF1;--muted:#9AA5B1;--rule:#2A3441;--link:#8CB4FF}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 20px 64px}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:800;letter-spacing:-.02em}
+.top{display:flex;justify-content:flex-end;margin-bottom:10px}
+.theme{font:500 .85rem "Public Sans",Arial,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:20px;padding:6px 14px;cursor:pointer}
+.role{font:600 1.15rem/1.4 Archivo,Arial,sans-serif;margin:10px 0 0}
+.lead{max-width:68ch;color:var(--muted);margin:18px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:18px 0 0;padding:0;list-style:none;font-weight:500}
+.tag{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin:28px 0 0;background:var(--card);border:2px solid var(--ink);border-left:12px solid var(--accent)}
+.tag div{padding:12px 16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.tag dt{font-size:.8rem;color:var(--muted);margin:0}
+.tag dd{margin:2px 0 0;font-weight:600}
+section{margin-top:48px}
+h2{font-size:1.5rem;font-weight:800;padding-left:14px;border-left:8px solid var(--accent);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:62ch}
+/* pipeline */
+.flow{background:var(--card);border:1px solid var(--rule);padding:22px 12px 18px}
+.track{position:relative;display:grid;grid-template-columns:repeat(5,1fr)}
+.track::before{content:"";position:absolute;left:10%;right:10%;top:22px;height:4px;background:repeating-linear-gradient(90deg,var(--accent) 0 14px,transparent 14px 22px)}
+.packet{position:absolute;top:13px;left:10%;width:22px;height:22px;margin-left:-11px;background:var(--ink);border:3px solid var(--accent);transition:left .6s cubic-bezier(.5,0,.2,1);z-index:2}
+.node{position:relative;z-index:1;background:none;border:0;color:var(--ink);cursor:pointer;font:600 .85rem/1.25 Archivo,Arial,sans-serif;padding:0 2px;text-align:center}
+.node i{display:block;width:44px;height:44px;margin:0 auto 8px;background:var(--bg);border:2px solid var(--rule);border-radius:50%;font:800 1rem/40px Archivo,Arial,sans-serif;font-style:normal}
+.node[aria-selected="true"] i{border-color:var(--ink);background:var(--accent);color:#14213D}
+.panel{margin:18px 8px 0;padding:14px 16px;border-left:6px solid var(--accent);background:var(--bg)}
+.panel h3{font-size:1.05rem;margin-bottom:6px}
+.panel p{margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{font-size:.82rem;border:1px solid var(--ink);padding:1px 10px;border-radius:14px}
+/* filter */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.filters button{font:600 .9rem "Public Sans",Arial,sans-serif;background:var(--card);color:var(--ink);border:2px solid var(--ink);padding:6px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hint{font-size:.9rem;color:var(--muted);margin:0 0 16px;min-height:1.4em}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.skills div{background:var(--card);border:1px solid var(--rule);padding:14px 16px}
+.skills h3{font-size:1rem;margin-bottom:6px}
+.skills p{margin:0;color:var(--muted);font-size:.95rem}
+details.job{background:var(--card);border:1px solid var(--rule);margin-bottom:12px}
+summary{cursor:pointer;padding:16px 20px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font:800 1.3rem/1 Archivo,Arial,sans-serif}
+details[open] summary::after{content:"–"}
+summary h3{font-size:1.1rem}
+.meta{color:var(--muted);font-size:.92rem;margin:3px 0 0}
+.job ul{margin:0;padding:0 20px 16px 40px}
+.job li{margin:6px 0}
+.dim{opacity:.3}
+.skills div,.job li{transition:opacity .25s}
+.plain p{margin:0 0 8px}
+footer{margin-top:48px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion: reduce){.packet,.skills div,.job li{transition:none}}
+@media (max-width:520px){.node{font-size:.75rem}.node i{width:38px;height:38px;line-height:34px}.track::before{top:19px}.packet{top:10px}}
+@media print{body{background:#fff;color:#000}.top,.filters,.hint{display:none}}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><button class="theme" id="theme" type="button">Switch theme</button></div>
+<header>
+  <h1>Dhiviya Irudayanathan</h1>
+  <p class="role">QA Lead and Senior QA Consultant: ERP, WMS, TMS and AI quality</p>
+  <p class="lead">Functional Tester and QA Lead with 11+ years in functional, integration, regression and SIT/UAT testing of enterprise applications. I validate order-driven, transaction-based workflows across ERP, WMS, TMS and middleware integrations, and I now evaluate chatbots and RAG applications for accuracy and hallucination risk.</p>
+  <ul class="links">
+    <li><a href="https://www.linkedin.com/in/dhiviyairudayanathan">LinkedIn</a></li>
+    <li><a href="https://github.com/Dhiviya-I16/warehouse-operations-ai-copilot">GitHub: Warehouse Operations AI Copilot</a></li>
+  </ul>
+  <dl class="tag">
+    <div><dt>Experience</dt><dd>11+ years in QA</dd></div>
+    <div><dt>Domain</dt><dd>ERP, WMS, TMS, EDI</dd></div>
+    <div><dt>Strengths</dt><dd>SIT/UAT, API, SQL, AI evaluation</dd></div>
+    <div><dt>Location</dt><dd>Chennai, India</dd></div>
+    <div><dt>Availability</dt><dd>Immediate joiner</dd></div>
+  </dl>
+</header>
+
+<section aria-labelledby="flowh">
+  <h2 id="flowh">Follow an order through the systems I test</h2>
+  <p class="sub">Select a stage to see what I check there.</p>
+  <div class="flow">
+    <div class="track" id="track" role="tablist" aria-label="Order flow stages">
+      <div class="packet" id="packet" aria-hidden="true"></div>
+      <button class="node" role="tab" aria-selected="true" data-i="0"><i>1</i>ERP</button>
+      <button class="node" role="tab" aria-selected="false" data-i="1"><i>2</i>EDI and APIs</button>
+      <button class="node" role="tab" aria-selected="false" data-i="2"><i>3</i>WMS</button>
+      <button class="node" role="tab" aria-selected="false" data-i="3"><i>4</i>TMS</button>
+      <button class="node" role="tab" aria-selected="false" data-i="4"><i>5</i>Release</button>
+    </div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Skills and experience</h2>
+  <p class="sub">Pick a focus and the matching skills and achievements stay bright.</p>
+  <div class="filters" id="filters" role="group" aria-label="Filter by focus">
+    <button type="button" aria-pressed="true" data-f="all">Everything</button>
+    <button type="button" aria-pressed="false" data-f="func">Functional testing</button>
+    <button type="button" aria-pressed="false" data-f="api">API and data</button>
+    <button type="button" aria-pressed="false" data-f="lead">Leadership</button>
+    <button type="button" aria-pressed="false" data-f="ai">AI quality</button>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div class="skills">
+    <div data-t="func"><h3>Functional testing</h3><p>Functional, integration, regression, exploratory, SIT/UAT, release testing, requirements-based test design, defect lifecycle management, test reporting</p></div>
+    <div data-t="api"><h3>API and data validation</h3><p>REST/SOAP with Postman and SOAP UI, payload validation, negative testing, error handling, SQL backend and transaction validation, EDI and middleware</p></div>
+    <div data-t="lead"><h3>Test management and Agile</h3><p>JIRA, Zephyr, HP ALM, Confluence, sprint testing, QA estimation, QA metrics, defect triage, stakeholder coordination, mentoring</p></div>
+    <div data-t="ai"><h3>AI testing</h3><p>LLM output evaluation, chatbot testing, hallucination testing, RAG evaluation with RAGAs and golden datasets</p></div>
+    <div data-t="func api ai"><h3>Tools and learning</h3><p>GitHub, Playwright (hands-on practice), Python and JavaScript (working knowledge)</p></div>
+  </div>
+
+  <h2 style="margin-top:36px">Experience</h2>
+  <details class="job" open>
+    <summary><h3>Senior QA Analyst / Consultant: Functional, Supply Chain and AI QA</h3><p class="meta">ETECH IT Solutions, Oct 2022 – Present</p></summary>
+    <ul>
+      <li data-t="func lead">Turn business requirements into test strategies, functional scenarios, exploratory coverage and regression suites; coordinate sprint, release and production validation.</li>
+      <li data-t="func api">Validate end-to-end order and transaction workflows across ERP, TMS, MHS/WES, middleware APIs and EDI; analyze logs with engineers to resolve defects.</li>
+      <li data-t="func api">Run functional, integration, API and SQL backend testing, including negative scenarios and transaction integrity checks.</li>
+      <li data-t="ai">Test AI chatbots and evaluate RAG responses against golden datasets using RAGAs; use Playwright for application test automation.</li>
+    </ul>
+  </details>
+  <details class="job" open>
+    <summary><h3>Associate QA Lead</h3><p class="meta">Customer Analytics India Pvt Ltd, Jun 2019 – Oct 2022</p></summary>
+    <ul>
+      <li data-t="lead func">Led end-to-end QA for enterprise implementations: test planning, functional testing, SIT, UAT, regression, release readiness and stabilization.</li>
+      <li data-t="api">Validated cross-system workflows and REST/SOAP APIs using SQL, Postman and SOAP UI across ERP, TMS, EDI and third-party interfaces.</li>
+      <li data-t="lead">Coordinated defect resolution with international stakeholders, supported UAT sign-off and trained junior QA engineers.</li>
+    </ul>
+  </details>
+  <details class="job">
+    <summary><h3>Senior Software Engineer – Test</h3><p class="meta">Aspire Systems, Jan 2019 – Apr 2019</p></summary>
+    <ul><li data-t="func api">Manual functional, API, integration and regression testing for enterprise and retail applications; SQL data and transaction validation; release verification.</li></ul>
+  </details>
+  <details class="job">
+    <summary><h3>Application Support Engineer</h3><p class="meta">Accenture Solutions Pvt Ltd, Nov 2014 – Dec 2018 (client: Kaiser Permanente)</p></summary>
+    <ul><li data-t="func">Supported production application quality, incident investigation, test execution and defect tracking; worked with onshore stakeholders on critical production issues and stabilization.</li></ul>
+  </details>
+  <details class="job">
+    <summary><h3>Warehouse Operations AI Copilot</h3><p class="meta">Agentic AI capstone project (<a href="https://github.com/Dhiviya-I16/warehouse-operations-ai-copilot">GitHub</a>)</p></summary>
+    <ul>
+      <li data-t="ai">Built a warehouse-focused AI copilot applying agentic AI concepts to operational workflows.</li>
+      <li data-t="ai">Applied retrieval-augmented generation and evaluated relevance, grounding and hallucination risk.</li>
+      <li data-t="ai">Added application monitoring for visibility into AI workflow behavior; maintained code in GitHub.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="plain" aria-labelledby="cert">
+  <h2 id="cert">Certifications and education</h2>
+  <p>Warehouse Advantage Certified Professional and Certified Associate, Körber Supply Chain</p>
+  <p>Agentic AI and Applications, IITM Pravartak (pursuing)</p>
+  <p>Playwright Test Automation, framework practice (ongoing)</p>
+  <p>Bachelor of Computer Applications (BCA), Shri Shankarlal Sundarbai Shasun Jain College for Women, 2011–2014</p>
+</section>
+<footer>Contact me through LinkedIn. References available on request.</footer>
+</main>
+<script>
+(function(){
+var stages=[
+{t:"ERP: where the order starts",p:"Order and transaction data is created here. I turn business requirements into test scenarios and check data and transaction integrity with SQL.",c:["Requirements-based design","SQL validation","Transaction integrity"]},
+{t:"EDI and APIs: data in motion",p:"Messages and middleware APIs pass data between systems. I validate payloads, run negative scenarios and check error handling.",c:["REST/SOAP","Postman","SOAP UI","EDI"]},
+{t:"WMS: warehouse execution",p:"I test end-to-end warehouse workflows, including MHS/WES integrations, and check data consistency across systems. Körber Warehouse Advantage certified.",c:["WMS","MHS/WES","Data consistency"]},
+{t:"TMS: transport integration",p:"I validate integrations with transport management and confirm data stays consistent across the connected systems.",c:["TMS integration","Cross-system checks"]},
+{t:"Release: sign-off and production",p:"SIT, UAT, regression, release readiness and production validation. I analyze logs with engineers and manage defects through to closure.",c:["SIT/UAT","Regression","JIRA, Zephyr, HP ALM"]}];
+var nodes=document.querySelectorAll(".node"),panel=document.getElementById("panel"),packet=document.getElementById("packet"),auto=null;
+function show(i){
+  nodes.forEach(function(n,k){n.setAttribute("aria-selected",k===i?"true":"false")});
+  packet.style.left=(10+i*20)+"%";
+  var s=stages[i];
+  panel.innerHTML="";
+  var h=document.createElement("h3");h.textContent=s.t;
+  var p=document.createElement("p");p.textContent=s.p;
+  var u=document.createElement("ul");u.className="chips";
+  s.c.forEach(function(x){var l=document.createElement("li");l.textContent=x;u.appendChild(l)});
+  panel.appendChild(h);panel.appendChild(p);panel.appendChild(u);
+}
+function stop(){if(auto){clearInterval(auto);auto=null}}
+nodes.forEach(function(n){n.addEventListener("click",function(){stop();show(+n.dataset.i)})});
+show(0);
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  var k=0;auto=setInterval(function(){k++;if(k>4){stop();show(0);return}show(k)},1100);
+}
+var fb=document.querySelectorAll("#filters button"),hint=document.getElementById("hint"),items=document.querySelectorAll(".skills div,.job li");
+fb.forEach(function(b){b.addEventListener("click",function(){
+  var f=b.dataset.f,n=0;
+  fb.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+  items.forEach(function(el){
+    var m=f==="all"||(" "+el.dataset.t+" ").indexOf(" "+f+" ")>-1;
+    el.classList.toggle("dim",!m);if(m&&el.tagName==="LI")n++;
+  });
+  document.querySelectorAll("details.job").forEach(function(d){d.open=true});
+  hint.textContent=f==="all"?"":n+" matching achievements highlighted below.";
+})});
+var root=document.documentElement,tb=document.getElementById("theme");
+try{var s=localStorage.getItem("theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
+tb.addEventListener("click",function(){
+  var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches);
+  var v=dark?"light":"dark";root.setAttribute("data-theme",v);
+  try{localStorage.setItem("theme",v)}catch(e){}
+});
+})();
+</script>
+</body>
+</html>
